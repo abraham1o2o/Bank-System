@@ -1,0 +1,24 @@
+package Test; import Bank.Account; import Bank.Services;
+public class test {
+    public static void main(String[] args) {
+        // Accounts 
+        Account A1 = new Account("John", "gsjyhe77", 1000);
+        
+         // operation we Can't preform:
+        A1.balance = 1000; //change the balance
+        A1.deposit(500); //deposit to the user account without using the service
+        A1.withdraw(10000); //withdrawing from the user account without using the service
+        A1.getBalance(); // viewing the balance without the service
+        A1.verifyPassword("password123"); // checking the password
+
+        A1.getAccountholder();
+
+        Services serv = new Services();
+
+        serv.reqBalance(A1, "John", "gsjyhe77");
+   
+        serv.reqDeposit(A1, "John", "gsjyhe77", 5000);
+
+       
+    }
+}
